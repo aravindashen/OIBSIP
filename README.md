@@ -13,7 +13,7 @@ A responsive landing page for **Lumen Trail**, a fictional guided night-hiking a
 > Add your GitHub Pages link here after deployment
 
 **Live Website:**  
-[View Project](YOUR_GITHUB_PAGES_LINK)
+[View Project](https://aravindashen.github.io/OIBSIP/)
 
 ---
 
