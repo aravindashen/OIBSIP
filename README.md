@@ -16,7 +16,7 @@
 
 <br />
 
-## 📑 Table of Contents
+##  Table of Contents
 1. [Executive Summary](#-executive-summary)
 2. [Project Portfolio](#-project-portfolio)
    - [Task 1: Lumen Trail Landing Page](#1️⃣-task-1-lumen-trail-landing-page)
@@ -24,18 +24,14 @@
    - [Task 3: Pro Temperature Converter](#3️⃣-task-3-pro-temperature-converter)
 3. [Architecture & Technology Stack](#-architecture--technology-stack)
 4. [Repository Structure](#-repository-structure)
-5. [Local Environment Setup](#-local-environment-setup)
-6. [Author & Contact](#-author--contact)
 
----
-
-## 📝 Executive Summary
+##  Executive Summary
 
 This repository serves as the official, comprehensive submission for the Level 1 deliverables of the **Web Development & Designing Internship** at **Oasis Infobyte**. 
 
 Moving beyond standard academic submissions, this portfolio was architected with a strict adherence to modern industry standards. Every module prioritizes responsive design, semantic HTML5 structure, modular CSS (utilizing variables and modern paradigms like Glassmorphism), and optimized ES6 JavaScript. The overarching goal was to deliver highly polished, accessible, and production-ready web interfaces.
 
-### 📜 Internship Metadata
+###  Internship Metadata
 *   **Organization:** Oasis Infobyte
 *   **Track Selection:** Web Development & Designing
 *   **Certification Level:** 1
@@ -43,7 +39,7 @@ Moving beyond standard academic submissions, this portfolio was architected with
 
 ---
 
-## 🚀 Project Portfolio
+##  Project Portfolio
 
 The following projects have been fully deployed via GitHub Pages and are accessible live. Each project was designed to solve a specific UI/UX challenge while maintaining peak browser performance.
 
@@ -90,7 +86,7 @@ This ecosystem was intentionally developed without the overhead of heavy JavaScr
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```text
 OIBSIP/
