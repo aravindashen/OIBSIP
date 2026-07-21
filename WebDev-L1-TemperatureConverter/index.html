@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Temperature Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Premium Font used in modern SaaS -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Decorative background elements -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <main class="glass-panel">
+        <header>
+            <div class="icon-container">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>
+            </div>
+            <h1>TempConvert</h1>
+            <p>Real-time precision temperature calculation.</p>
+        </header>
+
+        <section class="input-section">
+            <div class="input-group">
+                <label for="tempInput">Degrees</label>
+                <div class="input-wrapper">
+                    <input type="number" id="tempInput" placeholder="0.00" step="any">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="unitInput">Unit</label>
+                <div class="select-wrapper">
+                    <select id="unitInput">
+                        <option value="celsius">Celsius (°C)</option>
+                        <option value="fahrenheit">Fahrenheit (°F)</option>
+                        <option value="kelvin">Kelvin (K)</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <div id="errorMessage" class="error-message hidden"></div>
+
+        <button id="convertBtn" class="convert-btn">Calculate</button>
+
+        <section id="resultSection" class="result-section hidden">
+            <div class="results-grid" id="resultsGrid">
+                <!-- Results injected via JS -->
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
