@@ -1,0 +1,419 @@
+/* =============================================================
+   LUMEN TRAIL — Landing Page Styles
+   Structure: 1) Variables  2) Reset  3) Typography
+              4) Header/Nav  5) Hero  6) Tours  7) Gear
+              8) Testimonials  9) Footer  10) Responsive
+   ============================================================= */
+
+/* ---------- 1) DESIGN TOKENS (CSS Variables) ----------
+   Keeping every color/spacing value here means the whole site's
+   look can be changed by editing this one block. */
+:root {
+  --color-bg: #14162E;        /* Ink Indigo — main background */
+  --color-bg-alt: #1F2E24;    /* Deep Moss — alternating section background */
+  --color-accent: #E3A548;    /* Ember Gold — buttons, links, highlights */
+  --color-accent-rust: #B5651D; /* Trail Rust — secondary accent, used sparingly */
+  --color-text: #F2EFE6;      /* Starlight — main text on dark background */
+  --color-text-muted: #C9C6BC;/* dimmer text for subheadings/paragraphs */
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+
+  --max-width: 1160px;
+  --radius: 10px;
+}
+
+/* ---------- 2) RESET ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+img, svg {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+section {
+  padding: 96px 24px;
+}
+
+.section-inner,
+.tours, .gear-inner, .testimonials {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* ---------- 3) TYPOGRAPHY SCALE ---------- */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+h1 { font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 500; }
+h2 { font-size: clamp(1.8rem, 3.2vw, 2.6rem); margin-bottom: 12px; }
+h3 { font-size: 1.25rem; margin-bottom: 8px; }
+
+p {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  color: var(--color-accent);
+  margin-bottom: 20px;
+}
+
+/* ---------- 4) HEADER / NAV ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(20, 22, 46, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(242, 239, 230, 0.08);
+}
+
+.nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--color-accent);
+}
+
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+.btn-nav {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  padding: 10px 20px;
+  font-size: 0.9rem;
+}
+
+.btn-nav:hover { transform: translateY(-1px); }
+
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--color-bg);
+  padding: 16px 32px;
+  font-size: 1rem;
+}
+
+.btn-primary:hover { transform: translateY(-2px); }
+
+/* keyboard accessibility: visible focus ring on interactive elements */
+a:focus-visible, .btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* ---------- 5) HERO ---------- */
+.hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding-top: 60px;
+}
+
+.constellation {
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 60%;
+  min-width: 500px;
+  opacity: 0.9;
+  animation: twinkle 6s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 0.95; }
+}
+
+/* respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .constellation { animation: none; }
+  html { scroll-behavior: auto; }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hero-sub {
+  margin: 24px 0 36px;
+  font-size: 1.1rem;
+  max-width: 480px;
+}
+
+/* ---------- 6) TOURS ---------- */
+.tours {
+  padding: 96px 24px;
+}
+
+.tours h2 {
+  text-align: center;
+}
+
+.section-lead {
+  text-align: center;
+  max-width: 480px;
+  margin: 0 auto 48px;
+}
+
+.tour-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.tour-card {
+  background: rgba(242, 239, 230, 0.04);
+  border: 1px solid rgba(242, 239, 230, 0.1);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.tour-card:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-4px);
+}
+
+.tour-card p {
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.tour-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  border-top: 1px solid rgba(242, 239, 230, 0.1);
+  padding-top: 16px;
+}
+
+.tour-stats li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--color-text);
+}
+
+.tour-stats li span {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.72rem;
+  color: var(--color-accent);
+}
+
+/* ---------- 7) GEAR (alternating background section) ---------- */
+.gear {
+  background-color: var(--color-bg-alt);
+}
+
+.gear h2 {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.gear-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 40px;
+}
+
+.gear-item h3 {
+  color: var(--color-accent);
+  font-size: 1.05rem;
+}
+
+.gear-item p {
+  font-size: 0.92rem;
+}
+
+/* ---------- 8) TESTIMONIALS ---------- */
+.testimonials h2 {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+blockquote {
+  background: rgba(242, 239, 230, 0.04);
+  border-left: 3px solid var(--color-accent);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+blockquote p {
+  color: var(--color-text);
+  font-style: italic;
+  margin-bottom: 14px;
+  font-size: 0.95rem;
+}
+
+blockquote cite {
+  font-style: normal;
+  font-size: 0.82rem;
+  color: var(--color-accent-rust);
+}
+
+/* ---------- 9) FOOTER ---------- */
+.site-footer {
+  border-top: 1px solid rgba(242, 239, 230, 0.08);
+  padding: 64px 24px 32px;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.footer-brand p:last-child {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  max-width: 260px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 64px;
+}
+
+.footer-links h4 {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+  margin-bottom: 12px;
+}
+
+.footer-links p {
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  color: var(--color-accent);
+}
+
+.footer-note {
+  max-width: var(--max-width);
+  margin: 40px auto 0;
+  font-size: 0.78rem;
+  color: rgba(242, 239, 230, 0.4);
+}
+
+/* ---------- 10) RESPONSIVE ----------
+   Breakpoints: tablet (900px) and mobile (600px).
+   Nav links hide on small screens to avoid overlap;
+   grids collapse from 3/2 columns down to 1. */
+@media (max-width: 900px) {
+  .tour-grid,
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gear-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-links {
+    display: none; /* simple mobile approach: keep logo + CTA, hide link list */
+  }
+
+  section {
+    padding: 64px 20px;
+  }
+
+  .tour-grid,
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .constellation {
+    opacity: 0.4;
+  }
+}
